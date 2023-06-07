@@ -9,39 +9,39 @@ module.exports = {
     filename: 'bundle.js'
   },
   /////////////////////////////////////////////////////////////
-  // devServer: {
-  //   host: 'localhost',
-  //   port: 8080,
-  //   // enable HMR on the devServer
-  //   hot: true,
-  //   // fallback to root for other urls
-  //   historyApiFallback: true,
+  devServer: {
+    host: 'localhost',
+    port: 8080,
+    // enable HMR on the devServer
+    hot: true,
+    // fallback to root for other urls
+    historyApiFallback: true,
 
-  //   static: {
-  //     // match the output path
-  //     directory: path.resolve(__dirname, 'dist'),
-  //     // match the output 'publicPath'
-  //     publicPath: '/',
-  //   },
+    static: {
+      // match the output path
+      directory: path.resolve(__dirname, 'dist'),
+      // match the output 'publicPath'
+      publicPath: '/',
+    },
 
-  //   headers: { 'Access-Control-Allow-Origin': '*' },
-  //   /**
-  //    * proxy is required in order to make api calls to
-  //    * express server while using hot-reload webpack server
-  //    * routes api fetch requests from localhost:8080/api/* (webpack dev server)
-  //    * to localhost:3000/api/* (where our Express server is running)
-  //    */
-  //   proxy: {
-  //     '/api/**': {
-  //       target: 'http://localhost:3000/',
-  //       secure: false,
-  //     },
-  //     '/assets/**': {
-  //       target: 'http://localhost:3000/',
-  //       secure: false,
-  //     },
-  //   },
-  // },
+    headers: { 'Access-Control-Allow-Origin': '*' },
+    /**
+     * proxy is required in order to make api calls to
+     * express server while using hot-reload webpack server
+     * routes api fetch requests from localhost:8080/api/* (webpack dev server)
+     * to localhost:3000/api/* (where our Express server is running)
+     */
+    proxy: {
+      '/api/**': {
+        target: 'http://localhost:3000/',
+        secure: false,
+      },
+      '/assets/**': {
+        target: 'http://localhost:3000/',
+        secure: false,
+      },
+    },
+  },
   // ////////////////////////////////////////////
   module: {
     rules: [

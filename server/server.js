@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const PORT = 3000;
-const API_KEY = '44D9A6F4-5C07-47B8-9F63-75977C7D713E';
+// const API_KEY = '44D9A6F4-5C07-47B8-9F63-75977C7D713E';
 
 
 app.use(express.json());
@@ -24,10 +24,22 @@ app.get('/', (req, res) => {
 const api = require('./routes/api.js');
 app.use('/mystops', api)
 
+
 // app.get('/style.css', (req, res) => {
 //   return res.status(200).sendFile(path.resolve(__dirname, './client/styles.css'))
 // })
 
+
+// catch-all route handler for any requests to an unknown route
+app.use((req, res) => {
+  res.status(404).send('404 ERROR');
+});
+
+
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+
+module.exports = app;

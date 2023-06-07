@@ -1,13 +1,16 @@
 import React from 'react';
-
+import fetch from 'node-fetch';
 
 const MainContainer = () => {
+
+  const findBuses = () => {
+    fetch()
+  }
   return (
     <div className="container">
-      <h1>This is the bus:</h1>
+      <button id="busButton" onClick={findBuses}>Click to see incoming buses!</button>
     </div>
   )
-
 }
 
 export default MainContainer;
