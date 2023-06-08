@@ -3,18 +3,25 @@ import React from 'react';
 
 const MainContainer = () => {
 
+
+  // TODO: Setup fetch request to send request to server.js which will route fetch request to api.js and then busStopController.js
+
   const findBuses = () => {
     const stopNum = document.getElementById('stopNum').value;
     console.log(stopNum)
-    fetch(`http://api.thebus.org/arrivalsJSON/?key=44D9A6F4-5C07-47B8-9F63-75977C7D713E&stop=${stopNum}`, {
+    fetch(`/api/getstopinfo/${stopNum}`, {
       headers: { 'Content-Type': 'application/json' },
-      // mode: 'no-cors'
     })
-    .then(result => result.json())
+    .then(result => {
+      if (!result.ok) {
+        throw new Error(`HTTP error! status: ${result.status}`);
+      } else {
+        return result.json()
+      }
+    })
     .then(result => {
       console.log(result)
-      // res.locals.stopInfo = result;
-      // res.status(200).send(res.locals.stopInfo)
+      //Build react component in here
     })
     .catch(error => {
       console.log(error);
