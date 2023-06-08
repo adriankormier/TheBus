@@ -1,5 +1,10 @@
 body {
-  background-color: rgb(49, 49, 49);
+  background-color: rgb(228, 148, 0);
+  background-image: url('./img/busBackground.png');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100%;
+  background-position-x: left;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1em;
   font-style:italic;
@@ -8,27 +13,50 @@ body {
 
 .container {
   display: flex;
-  background-color: rgba(50, 143, 31, 0.507);
+  background: linear-gradient(180deg, black, rgba(255, 255, 255, 0));
   justify-content: center;
-  margin-top: 20rem;
+  align-items: center;
+  width: 100%;
+}
+
+.busFinderContainer {
+    display: flex;
+    border-radius: 2em;
+    justify-content:space-around;
+    align-items: center;
+    margin-top: 3em;
+    padding: 1rem;
+    background: radial-gradient(circle, 50% 50%, 20% 20%, rgb(8, 8, 8), rgba(255, 255, 255, 0));
+    box-shadow: .25em .55em .5em .05em rgba(0, 0, 0, 0.534);
+
 }
 
 #busButton {
-  background-color:rgb(49, 49, 49);
-  color: lightblue;
-  width: 10rem;
+  background-color:rgba(49, 49, 49, 0.397);
+  color: rgba(255, 255, 255, 0.685);
+  width: 100%;
   height: 4rem;
-  font-size: 1.5rem;
-  border-radius: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  font-size: 1.5em;
+  border-radius: .5rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+
 }
 
 #stopNum {
   display: block;
-  background-color:rgb(49, 49, 49);
-  color: lightblue;
-  height: 1rem;
-  width: 9.75rem;
-  font-size: .75rem;
+  background-color:rgba(49, 49, 49, 0);
+  border: 2px solid rgba(255, 255, 255, 0.199);
+  border-radius: 5px;
+  color: rgba(173, 216, 230, 0);
+  height: 1.5rem;
+  width: 95%;
+  font-size: .75em;
 }
+
+#stopNum:focus {
+  background-color: transparent;
+}
+
+/* box-shadow: <offset-x> <offset-y> <blur-radius> <spread-radius> <color> <inset>; */
