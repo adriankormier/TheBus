@@ -5,3 +5,30 @@ body {
   font-style:italic;
   color: blanchedalmond;
 }
+
+.container {
+  display: flex;
+  background-color: rgba(50, 143, 31, 0.507);
+  justify-content: center;
+  margin-top: 20rem;
+}
+
+#busButton {
+  background-color:rgb(49, 49, 49);
+  color: lightblue;
+  width: 10rem;
+  height: 4rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#stopNum {
+  display: block;
+  background-color:rgb(49, 49, 49);
+  color: lightblue;
+  height: 1rem;
+  width: 9.75rem;
+  font-size: .75rem;
+}
