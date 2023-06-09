@@ -6,11 +6,10 @@ const BusList = ({ headsign, time, key, route}) => {
 
 
   return (
-    <span>
-      <p>{route} { time }</p>
+    <div className='listItem'>
+      <p>Route #  {route} Arriving at  { time }</p>
      <p>{ headsign }</p>
-    </span>
-    
+    </div>
   )
 }
 
