@@ -6,9 +6,8 @@ module.exports = {
   entry: './client/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
-  //////////////////////////////////////////////////////////
   devServer: {
     host: 'localhost',
     port: 8080,
@@ -29,7 +28,7 @@ module.exports = {
      * proxy is required in order to make api calls to
      * express server while using hot-reload webpack server
      * routes api fetch requests from localhost:8080/api/* (webpack dev server)
-     * to localhost:3000/api/* (where our Express server is running)
+     * to localhost:3000/api/* (where the Express server is running)
      */
     proxy: {
       '/api/**': {
@@ -42,7 +41,6 @@ module.exports = {
       },
     },
   },
-  // ////////////////////////////////////////////
   module: {
     rules: [
       {
@@ -52,16 +50,20 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              ["@babel/preset-env", { targets: "defaults" }], 
-              ["@babel/preset-react", { targets: "defaults" }]
-            ]
-          }
+              ['@babel/preset-env', { targets: 'defaults' }],
+              ['@babel/preset-react', { targets: 'defaults' }],
+            ],
+          },
         },
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", 
-              "css-loader",
+        use: [
+          process.env.NODE_ENV !== 'production'
+            ? 'style-loader'
+            : MiniCSSExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
         ],
       },
     ],

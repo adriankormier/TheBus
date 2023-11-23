@@ -1,90 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  background-color: rgb(228, 148, 0);
-  background-image: url('./img/busBackground.png');
   background-repeat: no-repeat;
-  background-position: top;
-  background-size: 100%;
+  background-position: center;
+  background-size: cover;
   background-position-x: left;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1em;
   font-style:italic;
-  color: blanchedalmond;
-}
-
-.buttonContainer {
-  display: flex;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.322), rgba(255, 255, 255, 0));
-  justify-content: center;
-  align-items: center;
-  width: 25%;
-  border-radius: 1rem;
-  box-shadow: .25em .55em .5em .05em rgba(0, 0, 0, 0.534);
-}
-
-.listContainer {
-  margin-top: 2rem;
-  flex-direction: column;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.637), rgba(255, 255, 255, 0));
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  border-radius: 1rem;
-  box-shadow: .25em .25em 1em .05em rgba(0, 0, 0, 0.534);
-  max-height: 40rem;
-  overflow-y: scroll;
-  
-}
-
-.busFinderContainer {
-  display: flex;
-  flex-direction: column;
-  border-radius: 2em;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 1em;
   padding: 1rem;
-  background: radial-gradient(circle, 50% 50%, 20% 20%, rgb(8, 8, 8), rgba(255, 255, 255, 0));
-  box-shadow: .25em .55em .5em .05em rgba(0, 0, 0, 0.534);
-  min-height: 60em;
-}
-
-#busButton {
-  background-color:rgba(49, 49, 49, 0.397);
-  font-family: 'Oswald';
-  font-size: 4em;
-  color: rgba(255, 255, 255, 0.685);
-  width: 100%; 
-  height: 4rem;
-  font-size: 1.5em;
-  border-radius: .5rem;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  box-shadow: .25em .2em .2em .05em rgba(0, 0, 0, 0.349);
-    
-}
-
-#stopNum {
-  display: block;
-  background-color:rgba(49, 49, 49, 0);
-  border: 2px solid rgba(255, 255, 255, 0.199);
-  border-radius: 5px;
-  color: rgba(240, 255, 255, 0.959);
-  height: 1.5rem;
-  width: 95%;
-  font-size: .75em;
-  box-shadow: .25em .55em .5em .05em rgba(0, 0, 0, 0.534);
-  margin-top: 1em;
-}
-
-.listItem {
-  border-bottom: 2px solid rgba(151, 151, 151, 0.438);
-  margin-left: 1em;
+  color: blanchedalmond;
 }
 
 #stopNum:not(:placeholder-shown), #stopNum:focus, #stopNum:active, #stopNum:hover {
   background-color: transparent;
 }
 
+@keyframes zoom-pan {
+  0% {
+      transform: scale(1.1) translate(0, 0);
+  }
+  25% {
+      transform: scale(1.1) translate(-10%, 0);
+  }
+  50% {
+      transform: scale(1.1) translate(-10%, -10%);
+  }
+  75% {
+      transform: scale(1.1) translate(0, -10%);
+  }
+  100% {
+      transform: scale(1.1) translate(0, 0);
+  }
+}
 
+.bg-bus-image {
+  /* animation: zoom-pan 4s infinite; */
+  /* background-size: 110%; */
+}
 
-/* box-shadow: <offset-x> <offset-y> <blur-radius> <spread-radius> <color> <inset>; */
+::-webkit-scrollbar {
+  width: .25rem;
+  height: 90%;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: hsla(10, 80%, 10%, 20%);
+  border-radius: 10px;
+
+}
+::-webkit-scrollbar-thumb {
+  background-color: hsla(10, 80%, 82%, 90%);
+  border-radius: 10px;
+}
