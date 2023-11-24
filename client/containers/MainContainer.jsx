@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-// import fetch from 'node-fetch';
 import BusFinder from '../components/BusFinder.jsx';
 import BusList from '../components/BusList.jsx';
-// import e from 'express';
 
 const MainContainer = () => {
   const [buses, setBuses] = useState([]);
@@ -39,7 +37,7 @@ const MainContainer = () => {
       })
       .catch((error) => {
         console.error({ message: error });
-        setSearching(false)
+        setSearching(false);
       });
   };
 
